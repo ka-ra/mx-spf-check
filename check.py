@@ -45,7 +45,7 @@ exchangeOnline = "mail.protection.outlook.com"
 mx = ""
 isExchangeOnline = False
 
-outlookSpf = "include:spf.protection.outlook.com"
+outlookSpf = "spf.protection.outlook.com"
 spf = ""
 isOutlookSpf = False
 

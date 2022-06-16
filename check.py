@@ -42,6 +42,7 @@ while output != "console" and output != "csv":
 domains = list(dict.fromkeys(domains))
 
 exchangeOnline = "mail.protection.outlook.com"
+genericExchange = "olc.protection.outlook.com"
 mx = ""
 isExchangeOnline = False
 
@@ -60,7 +61,7 @@ for domain in domains:
         # use mx record to see if domain uses exchange online
         mxAnswers = dns.resolver.query(domain, 'MX')
         mx = str(mxAnswers.response)
-        isExchangeOnline = exchangeOnline in mx
+        isExchangeOnline = (exchangeOnline in mx) or (genericExchange in mx)
 
         # use spf check to see if domain allows outlook to send emails on its behalf
         spfAnswers = dns.resolver.query(domain, 'TXT')
